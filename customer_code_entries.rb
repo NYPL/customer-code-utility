@@ -19,14 +19,18 @@ class CustomerCodeEntry
     self.class.is_nypl? owning_institution
   end
 
+  def identifier
+    "#{owning_institution}/#{customer_code}"
+  end
+
   def self.validate(customer_code, owning_institution, restrictions)
-    is_code? (customer_code) &&
-    @@institutions.include? (owning_institution) &&
+    is_code?(customer_code) &&
+    @@institutions.include?(owning_institution) &&
     restrictions.all? {|code| is_code? code }
   end
 
   def self.is_code?(str)
-    str.match(/^\w{2,3}$/)
+    (str || "").match(/^\w{2,3}$/)
   end
 
   def self.is_nypl?(institution)
