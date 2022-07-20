@@ -5,9 +5,16 @@ def hashify (arr)
 end
 
 def display(hash)
-  # puts JSON.pretty_generate(hash)
-  hash.keys.sort.each {|k| p k, hash[k]}
-end
+   hash.keys.sort.each do |k|
+     if hash[k].is_a? Array
+       puts "\n#{k}: #{hash[k].join(', ')}"
+     else
+       puts "#{k}:"
+       puts "  Only in spreadsheet: #{hash[k][:spreadsheet].join(', ')}" unless hash[k][:spreadsheet].empty?
+       puts "  Only in NYPL-Core:   #{hash[k][:github].join(', ')}" unless hash[k][:github].empty?
+     end
+   end
+ end
 
 def load_env_vars
   File.readlines('./.env').map {|line| line.chomp.split("=") }.each do |pair|
