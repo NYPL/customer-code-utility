@@ -10,8 +10,8 @@ The purpose of this utility is to facilitate comparisons between NYPL's ReCap cu
 
 ## Environment Variables
 
-- `SPREADSHEET_FILE`: The path to your local copy of the cross-partner spreadsheet
-- `GITHUB_URL`: The url for the ReCap customer code mapping on our GitHub account. Make sure you use the raw version
+- `SPREADSHEET_FILE`: The path to your local copy of the cross-partner spreadsheet, which can be found here [Cross-Partner ReCap Customer Codes](https://docs.google.com/spreadsheets/d/1ewSv5EilkS8LR1Fx51AG7iJwn5o-ZYeynJiCGf48XpU/edit#gid=0)
+- `GITHUB_URL`: The url for the ReCap customer code mapping on our GitHub account. Make sure you use the raw version: [NYPL Customer Codes](https://raw.githubusercontent.com/NYPL/nypl-core/master/vocabularies/json-ld/recapCustomerCodes.json)
 
 ## Use
 
